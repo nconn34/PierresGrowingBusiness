@@ -72,19 +72,20 @@ namespace Bakery.Tests
     //Assert
     Assert.AreEqual(1, result);
   }
-//    [TestMethod]
-//   public void Find_ReturnsCorrectItem_Item()
-//   {
-//     //Arrange
-//     string description01 = "Walk the dog";
-//     string description02 = "Wash the dishes";
-//     Item newItem1 = new Item(description01);
-//     Item newItem2 = new Item(description02);
+   [TestMethod]
+  public void Find_ReturnsCorrectOrder_Order()
+  {
+    //Arrange
+    string description01 = "One dozen bagels";
+    string description02 = "Two dozen scones";
+    Order newOrder1 = new Order(description01);
+    Order newOrder2 = new Order(description02);
 
-//     //Act
-//     Item result = Item.Find(2);
+    //Act
+    Order result = Order.Find(2);
 
-//     //Assert
-//     Assert.AreEqual(newItem2, result);
+    //Assert
+    Assert.AreEqual(newOrder2, result);
   }
   }
+}
