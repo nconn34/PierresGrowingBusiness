@@ -21,14 +21,14 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
-//     [TestMethod]
-//     public void GetDescription_ReturnsDescription_String()
-//     {
-//       string description = "Walk the dog.";
-//       Item newItem = new Item(description);
-//       string result = newItem.Description;
-//       Assert.AreEqual(description, result);
-//     }
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "One Dozen Bagels.";
+      Order newOrder = new Order(description);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
+    }
 
 //     [TestMethod]
 //     public void SetDescription_SetDescription_String()
