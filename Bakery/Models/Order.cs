@@ -4,36 +4,27 @@ namespace Bakery.Models
 {
   public class Order
   {
-    private static List<Order> _instances = new List<Order> {};
-    public string Name { get; set; }
-    public int Id { get; }
-    public List<Item> Items { get; set; }
+  public string Description { get; set; }
+  public int Id { get; }
+  private static List<Order> _instances = new List<Order> {};
 
-    public Order(string orderName)
-    {
-      Name = orderName;
-      _instances.Add(this);
-      Id = _instances.Count;
-      Items = new List<Item>{};
-    }
-
-    public static void ClearAll()
-    {
-      _instances.Clear();
-    }
-
-    public static List<Order> GetAll()
-    {
-      return _instances;
-    }
-
-    public static Order Find(int searchId)
-    {
-      return _instances[searchId-1];
-    }
-    public void AddItem(Item item)
+  public Order(string description)
   {
-    Items.Add(item);
+    Description = description;
+    _instances.Add(this);
+    Id = _instances.Count;
   }
+  public static List<Order> GetAll()
+  {
+    return _instances;
+  }
+public static void ClearAll()
+{
+  _instances.Clear();
+}
+public static Order Find(int searchId)
+{
+  return _instances[searchId-1];
+}
   }
 }

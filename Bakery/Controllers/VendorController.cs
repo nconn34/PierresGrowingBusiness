@@ -1,58 +1,50 @@
+using System.Collections.Generic;
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Bakery.Models;
-using System.Collections.Generic;
 
 namespace Bakery.Controllers
 {
-  public class ItemsController : Controller
+  public class VendorsController : Controller
   {
-
-    [HttpGet("/items")]
+    [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Item> allItems = Item.GetAll();
-      return View(allItems);
+    List<Vendor> allVendors = Vendor.GetAll();
+    return View(allVendors);
     }
-
-    [HttpGet("/items/new")]
+    [HttpGet("/vendors/new")]
     public ActionResult New()
     {
-      return View();
+    return View();
     }
-
-    [HttpPost("/items")]
-    public ActionResult Create(string description)
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorsName)
     {
-      Item myItem = new Item(description);
-      return RedirectToAction("Index");
+    Vendor newVendor = new Vendor(vendorsName);
+    return RedirectToAction("Index");
     }
-    [HttpPost("/items/delete")]
-    public ActionResult DeleteAll()
-    {
-      Item.ClearAll();
-      return View();
-    }
-    [HttpGet("/items/{id}")]
+     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
-      Item foundItem = Item.Find(id);
-      return View(foundItem);
-    }
-    [HttpGet("/orders/{orderId}/items/{itemId}")]
-    public ActionResult Show(int orderId, int itemId)
-    {
-    Item item = Item.Find(itemId);
-    Order order = Order.Find(orderId);
     Dictionary<string, object> model = new Dictionary<string, object>();
-    model.Add("item", item);
-    model.Add("order", order);
+    Vendor selectedVendor = Vendor.Find(id);
+    List<Order> vendorOrders = selectedVendor.Orders;
+    model.Add("vendor", selectedVendor);
+    model.Add("order", vendorOrders);
     return View(model);
     }
-    [HttpGet("/order/{orderId}/items/new")]
-    public ActionResult New(int orderId)
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderDescription)
     {
-     Order order = Order.Find(orderId);
-     return View(order);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderDescription);
+      foundVendor.AddItem(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("order", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
     }
   }
 }
