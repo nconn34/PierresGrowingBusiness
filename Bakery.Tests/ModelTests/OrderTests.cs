@@ -41,13 +41,13 @@ namespace Bakery.Tests
       Assert.AreEqual(updatedDescription, result);
     }
 
-//     [TestMethod]
-//     public void GetAll_ReturnsEmptyList_ItemList()
-//     {
-//       List<Item> newList = new List<Item> { };
-//       List<Item> result = Item.GetAll();
-//       CollectionAssert.AreEqual(newList, result);
-//     }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
 
 //     [TestMethod]
 //     public void GetAll_ReturnsItems_ItemList()
