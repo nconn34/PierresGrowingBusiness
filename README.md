@@ -1,35 +1,35 @@
-**Pierre's Bakery**
+**Pierre's Vendor and Order Tracker**
 
 #### By **Nathan Conn**
 
-#### This program will allow you to check the price of a bread or pastry order through Pierre's Bakery..
+#### This program was designed specifically for Pierre's Bakery to allow him to better track vendors and their orders and order history.
 
 
 ## Technologies Used
 
 * C#
 * NET 5.0
-* dotnet
+* MVC
 * MS Testing
 
 
 
 ## Description
 
-When a user first enters the program, they will be asked if they want to purchase bread or pastries. After making their selection, a user may specify how much of either they want and will get a price for it.  
+Pierre will be able to track his vendors that order his baked goods and assign each vendor a log of orders to track over time! If I had more time to work on this app, I would have included more CSS styling as well as more functionality to the order lists themselves. 
 
 ## Setup/Installation Requirements
 
 * Clone repository.
-* In the command line, run "dotnet restore" in both the BakedGoods and BakedGoods.Tests directories.
-* In the command line, run "dotnet build" in both the BakedGoods and BakedGoods.Tests directories.
-* In the command line, run "dotnet test" while in the BakedGoods.Tests directory to ensure the tests are properly working.
-*  In the command line, run "dotnet run" while in the BakedGoods directory to run the program.
+* In the command line, run "dotnet restore" in both the Bakery and Bakery.Tests directories.
+* In the command line, run "dotnet build" in both the Bakery and Bakery.Tests directories.
+* In the command line, run "dotnet test" while in the Bakery.Tests directory to ensure the tests are properly working.
+* In the command line, run "dotnet run" while in the Bakery directory to run the program.
 
 
 ## Known Bugs
 
-*Unsure of a decent equation for the pastry prices, so I will try and mess with some more logic and implementing a for loop like in the Bread class.
+*My foreach loop will not print multiple vendors to a line, and currently only will log one at a time and not display the name, however all other aspects of the page run and function when accessed from the dev tools console in Google Chrome. 
 
 ## Contact Me
 
@@ -38,4 +38,4 @@ nconn34@gmail.com
 
 ## License
 
-Copyright (c) 2/12/2022 Nathan Conn.
+Copyright (c) 2/26/2022 Nathan Conn.
