@@ -60,18 +60,18 @@ namespace Bakery.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
-//      [TestMethod]
-//   public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
-//   {
-//     //Arrange
-//     string description = "Walk the dog.";
-//     Item newItem = new Item(description);
+     [TestMethod]
+  public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+  {
+    //Arrange
+    string description = "One dozen bagels.";
+    Order newOrder = new Order(description);
 
-//     //Act
-//     int result = newItem.Id;
-//     //Assert
-//     Assert.AreEqual(1, result);
-//   }
+    //Act
+    int result = newOrder.Id;
+    //Assert
+    Assert.AreEqual(1, result);
+  }
 //    [TestMethod]
 //   public void Find_ReturnsCorrectItem_Item()
 //   {
