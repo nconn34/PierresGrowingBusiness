@@ -30,16 +30,16 @@ namespace Bakery.Tests
       Assert.AreEqual(description, result);
     }
 
-//     [TestMethod]
-//     public void SetDescription_SetDescription_String()
-//     {
-//       string description = "Walk the dog.";
-//       Item newItem = new Item(description);
-//       string updatedDescription = "Do the dishes";
-//       newItem.Description = updatedDescription;
-//       string result = newItem.Description;
-//       Assert.AreEqual(updatedDescription, result);
-//     }
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "One Dozen Bagels.";
+      Order newOrder = new Order(description);
+      string updatedDescription = "Do the dishes";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+      Assert.AreEqual(updatedDescription, result);
+    }
 
 //     [TestMethod]
 //     public void GetAll_ReturnsEmptyList_ItemList()
