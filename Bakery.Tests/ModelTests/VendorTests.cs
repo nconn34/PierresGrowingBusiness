@@ -90,7 +90,7 @@ namespace Bakery.Tests
       List<Order> newList = new List<Order> { newOrder };
       string name = "Work";
       Vendor newVendor = new Vendor(name);
-      newVendor.AddItem(newOrder);
+      newVendor.AddOrder(newOrder);
 
       //Act
       List<Order> result = newVendor.Orders;

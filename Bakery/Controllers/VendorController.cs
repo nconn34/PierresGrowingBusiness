@@ -19,9 +19,9 @@ namespace Bakery.Controllers
     return View();
     }
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorsName)
+    public ActionResult Create(string vendorName)
     {
-    Vendor newVendor = new Vendor(vendorsName);
+    Vendor newVendor = new Vendor(vendorName);
     return RedirectToAction("Index");
     }
      [HttpGet("/vendors/{id}")]
@@ -40,7 +40,7 @@ namespace Bakery.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderDescription);
-      foundVendor.AddItem(newOrder);
+      foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("order", vendorOrders);
       model.Add("vendor", foundVendor);
